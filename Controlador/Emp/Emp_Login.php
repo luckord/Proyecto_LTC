@@ -7,6 +7,14 @@ $pas = $_POST['pas'];
 if ($con->login($dni, $pas)== false) {
     header("Location: ../../index.php");
 } else {
-    header("Location: ../../Vista/empleados.php");
+    $dato = $con->login($dni, $pas);
+    session_start();
+    if($dato['car']=="Administrador"){
+        $_SESSION['nombre'] = $dato['nom'];
+        header("Location: ../../Vista/empleados.php");
+    }else{
+        header("Location: ../../Vista/con_lista.php");
+    }
+    
 }
 ?>

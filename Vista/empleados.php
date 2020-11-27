@@ -1,5 +1,6 @@
 <?php
 require_once '../Modelo/Emp_DB.php';
+session_start();
 $con = new Emp_DB();
 $lista = $con->lista();
 ?>
@@ -17,8 +18,15 @@ and open the template in the editor.
         <link href="../reosurces/css/emp_lista.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div class="container col-sm-8">
-            <h1>Empleados</h1>
+        <div class="container col-sm-8 cuerpo">
+            <div class="jumbotron">
+                <h1 class="display-4">Hola, <?php echo $_SESSION['nombre']; ?>!</h1>
+                <p class="lead"></p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+            <h1>Empleados <?php echo $_SESSION['nombre']; ?> </h1>
             <a href="emp_Insertar.php">
                 <input type="button" value="Registrar">
             </a>
