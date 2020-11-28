@@ -1,6 +1,7 @@
 <?php
 require_once '../Modelo/Emp_DB.php';
 $con = new Emp_DB();
+session_start();
 $dato = $con->emp_buscar_id($_GET['id']);
 $cargos = $con->cargos();
 $paises = $con->paises();
@@ -20,6 +21,7 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container col-sm-6">
+            <h1>Detalle de empleado</h1>
             <form action="../Controlador/Emp/Emp_Editar.php?id=<?php echo $dato['id']; ?>" method="POST">
                 <div class="form-group">
                     <label for="dni">DNI</label>

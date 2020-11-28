@@ -20,20 +20,22 @@ and open the template in the editor.
     <body>
         <div class="container col-sm-8 cuerpo">
             <div class="jumbotron">
-                <h1 class="display-4">Hola, <?php echo $_SESSION['nombre']; ?>!</h1>
-                <p class="lead"></p>
+                <h1 class="display-4">Hola, <?php echo $_SESSION['nombre'].", ".$_SESSION['apellido']; ?>!</h1>
                 <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a class="btn btn-primary btn-lg" href="emp_detalle.php?id=<?php echo $_SESSION['id']; ?>" role="button">Perfil</a>
+                    <a class="btn btn-danger btn-lg" href="../Controlador/Emp/Emp_Salir.php" role="button">Salir</a>
+                    
+                </div>
             </div>
-            <h1>Empleados <?php echo $_SESSION['nombre']; ?> </h1>
-            <a href="emp_Insertar.php">
-                <input type="button" value="Registrar">
-            </a>
-            <br>
-            <a href="../Controlador/Emp/Emp_Salir.php">
-                <input type="button" value="Salir">
-            </a>
+            <h1>Lista de empleados</h1>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="emp_Insertar.php" class="btn btn-secondary">
+                    Registrar
+                </a>
+            </div>
+            <br> 
+            <br> 
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>

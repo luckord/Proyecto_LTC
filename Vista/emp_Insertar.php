@@ -18,6 +18,7 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container col-sm-6">
+            <h1>Registro de empleados</h1>
             <form action="../Controlador/Emp/Emp_Insertar.php" method="POST">
                 <div class="form-group">
                     <label for="dni">DNI</label>
